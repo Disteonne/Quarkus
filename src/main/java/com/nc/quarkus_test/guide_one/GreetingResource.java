@@ -1,4 +1,4 @@
-package com.nc.quarkus_test;
+package com.nc.quarkus_test.guide_one;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
