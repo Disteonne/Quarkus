@@ -9,10 +9,11 @@ import io.vertx.mutiny.sqlclient.Row;
 import io.vertx.mutiny.sqlclient.RowSet;
 import io.vertx.mutiny.sqlclient.Tuple;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 import java.util.stream.StreamSupport;
 
-@Named("fruit-service-v1")
+@ApplicationScoped
 public class FruitServiceImpl implements FruitService {
     @Override
     public Multi<Fruit> findAll(PgPool client) {

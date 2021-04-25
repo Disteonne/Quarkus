@@ -2,6 +2,7 @@ package com.nc.quarkus_test.guide_two.part_two.resource;
 
 import com.nc.quarkus_test.guide_two.part_two.entity.Fruit;
 import com.nc.quarkus_test.guide_two.part_two.service.FruitService;
+import com.nc.quarkus_test.guide_two.part_two.service_impl.FruitServiceImpl;
 import io.smallrye.mutiny.Multi;
 import io.smallrye.mutiny.Uni;
 import io.vertx.mutiny.pgclient.PgPool;
@@ -20,8 +21,9 @@ public class FruitResource {
 
     @Inject
     private PgPool client;
-    @Named("fruit-service-v1")
-    private FruitService fruitService;
+    @Inject
+
+    private FruitServiceImpl fruitService;
 
     @GET
     public Multi<Fruit> getAll(){
