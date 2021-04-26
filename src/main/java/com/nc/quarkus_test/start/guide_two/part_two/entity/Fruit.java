@@ -1,4 +1,4 @@
-package com.nc.quarkus_test.guide_two.part_two.entity;
+package com.nc.quarkus_test.start.guide_two.part_two.entity;
 
 public class Fruit {
 

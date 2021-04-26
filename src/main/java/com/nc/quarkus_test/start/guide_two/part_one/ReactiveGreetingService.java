@@ -1,4 +1,4 @@
-package com.nc.quarkus_test.guide_two.part_one;
+package com.nc.quarkus_test.start.guide_two.part_one;
 
 import io.smallrye.mutiny.Multi;
 import io.smallrye.mutiny.Uni;

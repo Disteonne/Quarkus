@@ -1,4 +1,4 @@
-package com.nc.quarkus_test.guide_two.part_two.db_init;
+package com.nc.quarkus_test.start.guide_two.part_two.db_init;
 
 import io.vertx.mutiny.pgclient.PgPool;
 

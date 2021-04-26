@@ -1,10 +1,9 @@
-package com.nc.quarkus_test.guide_two.part_two.service;
+package com.nc.quarkus_test.start.guide_two.part_two.service;
 
-import com.nc.quarkus_test.guide_two.part_two.entity.Fruit;
+import com.nc.quarkus_test.start.guide_two.part_two.entity.Fruit;
 import io.smallrye.mutiny.Multi;
 import io.smallrye.mutiny.Uni;
 import io.vertx.mutiny.pgclient.PgPool;
-import io.vertx.mutiny.sqlclient.Row;
 
 
 public interface FruitService {

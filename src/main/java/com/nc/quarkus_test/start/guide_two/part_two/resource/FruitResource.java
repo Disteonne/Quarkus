@@ -1,18 +1,15 @@
-package com.nc.quarkus_test.guide_two.part_two.resource;
+package com.nc.quarkus_test.start.guide_two.part_two.resource;
 
-import com.nc.quarkus_test.guide_two.part_two.entity.Fruit;
-import com.nc.quarkus_test.guide_two.part_two.service.FruitService;
-import com.nc.quarkus_test.guide_two.part_two.service_impl.FruitServiceImpl;
+import com.nc.quarkus_test.start.guide_two.part_two.entity.Fruit;
+import com.nc.quarkus_test.start.guide_two.part_two.service_impl.FruitServiceImpl;
 import io.smallrye.mutiny.Multi;
 import io.smallrye.mutiny.Uni;
 import io.vertx.mutiny.pgclient.PgPool;
 
 import javax.inject.Inject;
-import javax.inject.Named;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.net.URI;
 
 @Path("/fruits")
 @Produces(MediaType.APPLICATION_JSON)

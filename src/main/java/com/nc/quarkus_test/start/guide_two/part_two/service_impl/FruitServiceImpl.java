@@ -1,7 +1,7 @@
-package com.nc.quarkus_test.guide_two.part_two.service_impl;
+package com.nc.quarkus_test.start.guide_two.part_two.service_impl;
 
-import com.nc.quarkus_test.guide_two.part_two.entity.Fruit;
-import com.nc.quarkus_test.guide_two.part_two.service.FruitService;
+import com.nc.quarkus_test.start.guide_two.part_two.entity.Fruit;
+import com.nc.quarkus_test.start.guide_two.part_two.service.FruitService;
 import io.smallrye.mutiny.Multi;
 import io.smallrye.mutiny.Uni;
 import io.vertx.mutiny.pgclient.PgPool;
@@ -10,7 +10,6 @@ import io.vertx.mutiny.sqlclient.RowSet;
 import io.vertx.mutiny.sqlclient.Tuple;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Named;
 import java.util.stream.StreamSupport;
 
 @ApplicationScoped
