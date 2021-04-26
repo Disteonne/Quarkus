@@ -17,7 +17,7 @@ import java.util.stream.StreamSupport;
 public class FruitServiceImpl implements FruitService {
     @Override
     public Multi<Fruit> findAll(PgPool client) {
-        return  client.query("SELECT * FROM fruits ORDER BY name ASC").execute()
+        return  client.query("SELECT * FROM fruits ORDER BY id ASC").execute()
                 .onItem().transformToMulti(set->Multi.createFrom().items(()-> StreamSupport.stream(set.spliterator(),false)))
                 .onItem().transform(FruitServiceImpl::from);
     }
@@ -34,7 +34,7 @@ public class FruitServiceImpl implements FruitService {
         return client.preparedQuery("INSERT INTO  fruits (name) VALUES ($1) returning (id)")
                 .execute(Tuple.of(name))
                 .onItem().transform(RowSet::iterator)
-                .onItem().transform(iterator->iterator.hasNext() ? from(iterator.next()):null);
+                .onItem().transform(iterator->iterator.hasNext() ? from(iterator.next(),name):null);
     }
 
     @Override
@@ -54,5 +54,9 @@ public class FruitServiceImpl implements FruitService {
 
     public static Fruit from(Row row) {
         return new Fruit(row.getLong("id"),row.getString("name"));
+    }
+
+    public static Fruit from(Row row,String name){
+        return new Fruit(row.getLong("id"),name);
     }
 }

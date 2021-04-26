@@ -15,6 +15,9 @@ public class Fruit {
         this.name = name;
     }
 
+    public Fruit() {
+    }
+
     public String getName() {
         return name;
     }

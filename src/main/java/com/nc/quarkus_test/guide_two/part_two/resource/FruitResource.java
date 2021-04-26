@@ -39,8 +39,10 @@ public class FruitResource {
     @POST
     public Uni<Response> create(Fruit fruit){
         return fruitService.save(client,fruit.getName())
-                .onItem().transform(fruit1 -> URI.create("/fruits"+fruit1.getId()))
-                .onItem().transform(uri -> Response.created(uri).build());
+                //.onItem().transform(fruit1 -> URI.create("/fruits/"+fruit1.getId()))
+                //.onItem().transform(uri -> Response.created(uri).build());
+        .onItem().transform(fruits-> fruits==null ?
+                        Response.status(Response.Status.BAD_REQUEST).build():Response.status(Response.Status.OK).build());
     }
 
     @PATCH
